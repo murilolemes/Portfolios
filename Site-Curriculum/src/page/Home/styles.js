@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import imgAvatar from '../../assets/foto_avatar.jpg';
 
 export const Container = styled.div`
-  padding: 50px 200px 20px 200px;
-
   p {
     color: #32264d;
     font-size: 1.5rem;
@@ -16,22 +14,33 @@ export const Container = styled.div`
     font-size: 1.5rem;
   }
 
-  @media (max-width: 450px) {
-    padding: 20px 10px;
+  @media (max-width: 720px) {
+    padding: 30px 20px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 721px) {
+    padding: 30px 20px;
+
+    .classContent {
+      max-width: 95%;
+    }
+  }
+
+  @media (min-width: 1060px) {
+    max-width: 1060px;
+    margin: 0 auto;
+
     .classContent {
       max-width: 750px;
     }
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1441px) {
+    max-width: 1440px;
     margin: 0 auto;
-    max-width: 1600px;
 
     .classContent {
-      max-width: 1000px;
+      max-width: 1200px;
     }
   }
 `;
@@ -47,23 +56,44 @@ export const Content = styled.div`
     max-width: 800px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 720px) {
     flex-direction: column-reverse;
+  }
+
+  @media (min-width: 1441px) {
+    #backgroundAvatar {
+      max-width: 1100px;
+    }
   }
 `;
 
 export const Title = styled.div`
-  font-size: 3.2rem;
   text-align: center;
   padding-bottom: 25px;
   border-bottom: 1px solid #e6e6f0;
 
-  @media (max-width: 400px) {
+  @media (max-width: 399px) {
     font-size: 1.2rem;
   }
 
-  @media (max-width: 450px) {
+  @media (min-width: 400px) {
     font-size: 1.4rem;
+  }
+
+  @media (min-width: 450px) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: 721px) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 3.2rem;
   }
 `;
 
@@ -78,9 +108,8 @@ export const AboutMe = styled.div.attrs({
     line-height: 25px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     border-top: 1px solid #e6e6f0;
-    border-bottom: 1px solid #e6e6f0;
 
     h2 {
       font-size: 2.4rem;
@@ -90,6 +119,30 @@ export const AboutMe = styled.div.attrs({
     p {
       font-size: 1.5rem;
       text-align: justify;
+    }
+  }
+
+  @media (min-width: 500px) {
+    border-top: 1px solid #e6e6f0;
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.6rem;
+      text-align: justify;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -119,7 +172,7 @@ export const PersonalData = styled.div.attrs({
     align-items: center;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -150,6 +203,44 @@ export const PersonalData = styled.div.attrs({
       display: block;
     }
   }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    h4 {
+      font-size: 1.7rem;
+      margin-right: 5px;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+
+    a {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    h4 {
+      font-size: 1.9rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    a {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 export const Formations = styled.div.attrs({
@@ -163,7 +254,7 @@ export const Formations = styled.div.attrs({
     line-height: 25px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -174,6 +265,27 @@ export const Formations = styled.div.attrs({
       text-align: center;
       width: 100%;
       display: block;
+    }
+  }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -189,7 +301,7 @@ export const Improvement = styled.div.attrs({
     line-height: 25px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -200,6 +312,27 @@ export const Improvement = styled.div.attrs({
       text-align: center;
       width: 100%;
       display: block;
+    }
+  }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -215,7 +348,7 @@ export const Knowledge = styled.div.attrs({
     line-height: 25px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -226,6 +359,27 @@ export const Knowledge = styled.div.attrs({
       text-align: center;
       width: 100%;
       display: block;
+    }
+  }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -254,7 +408,7 @@ export const ProfessionalExperience = styled.div.attrs({
     align-items: center;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -278,6 +432,43 @@ export const ProfessionalExperience = styled.div.attrs({
       margin: 0;
     }
   }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 25px;
+    }
+
+    div {
+      h4 {
+        font-size: 1.7rem;
+        margin-right: 5px;
+      }
+
+      p {
+        line-height: normal;
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    h4 {
+      font-size: 1.9rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 export const Objective = styled.div.attrs({
@@ -290,7 +481,7 @@ export const Objective = styled.div.attrs({
     line-height: 25px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -301,6 +492,28 @@ export const Objective = styled.div.attrs({
       text-align: justify;
       width: 100%;
       display: block;
+    }
+  }
+
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 2.4rem;
+      text-align: initial;
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-align: justify;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    h2 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -315,7 +528,7 @@ export const Avatar = styled.div`
   border-radius: 50%;
   margin: 10px 0 30px auto;
 
-  @media (max-width: 450px) {
+  @media (max-width: 720px) {
     margin: 15px auto;
   }
 `;

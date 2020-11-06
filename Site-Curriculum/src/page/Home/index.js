@@ -151,13 +151,13 @@ const Home = () => {
           </div>
 
           <div className="facebook">
-            <a href="https://facebook.com/murilo.lemes.5">
+            <a href="https://facebook.com/">
               <img src={facebook} alt="Facebook" />
             </a>
           </div>
 
           <div className="instagram">
-            <a href="https://instagram.com/murilo.lemes/">
+            <a href="https://instagram.com/">
               <img src={instagram} alt="Instagram" />
             </a>
           </div>
