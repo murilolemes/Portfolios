@@ -1,10 +1,24 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { FiPlus, FiMinus } from 'react-icons/fi';
+import {
+  FiMinus,
+  FiMenu,
+  FiX,
+  FiGrid,
+  FiFilePlus,
+  FiUser,
+  FiList,
+  FiUserPlus,
+  FiServer,
+  FiPlusSquare,
+  FiMessageCircle,
+  FiSettings,
+  FiLogOut,
+} from 'react-icons/fi';
 
 import {
   Container,
-  // Button,
+  Icon,
   ControlPanel,
   Actions,
   Content,
@@ -22,6 +36,9 @@ const Header = () => {
 
   const [isClassNameServices, setIsClassNameServices] = useState('list');
   const [isServices, setIsServices] = useState(false);
+
+  const [isMenu, setIsMenu] = useState(false);
+  const [isDisplayMenu, setIsDisplayMenu] = useState('displayOff');
 
   const handleControlPanel = useCallback(() => {
     if (isControlPanel) {
@@ -71,53 +88,90 @@ const Header = () => {
     }
   }, [isServices]);
 
+  const handleMenu = useCallback(() => {
+    if (isMenu) {
+      setIsMenu(false);
+      setIsDisplayMenu('displayOff');
+    } else {
+      setIsMenu(true);
+      setIsDisplayMenu('displayOn');
+    }
+  }, [isMenu]);
+
   return (
     <Container>
-      {/* <Button>
-        <FiX size={34} />
-      </Button> */}
-
-      <Content>
+      <Icon onClick={handleMenu}>{!isMenu ? <FiMenu /> : <FiX />}</Icon>
+      <Content id={isDisplayMenu}>
         <ControlPanel className="content">
           <div className="title">
             <button type="button" onClick={handleControlPanel}>
-              {!isControlPanel ? <FiPlus size={16} /> : <FiMinus size={16} />}
+              {!isControlPanel ? <FiGrid /> : <FiMinus />}
               <h2>Painel de controle</h2>
             </button>
           </div>
           <div className={isClassNameControlPanel}>
-            <Link to="/dashboard">Listar Clientes Ativos</Link>
-            <Link to="/dashboard">Listar Clientes Inativos</Link>
-            <Link to="/dashboard">Listar Servidores</Link>
-            <Link to="/dashboard">Listar Planos</Link>
+            <Link to="/dashboard">
+              <FiList />
+              Listar Clientes Ativos
+            </Link>
+            <Link to="/dashboard">
+              <FiList />
+              Listar Clientes Inativos
+            </Link>
+            <Link to="/dashboard">
+              <FiList />
+              Listar Servidores
+            </Link>
+            <Link to="/dashboard">
+              <FiList />
+              Listar Planos
+            </Link>
           </div>
         </ControlPanel>
 
         <Actions className="content">
           <div className="title">
             <button type="button" onClick={handleActions}>
-              {!isActions ? <FiPlus size={16} /> : <FiMinus size={16} />}
-              <h2>Ações</h2>
+              {!isActions ? <FiFilePlus /> : <FiMinus />}
+              <h2>Cadastar</h2>
             </button>
           </div>
           <div className={isClassNameActions}>
-            <Link to="/dashboard">Cadastrar Clientes</Link>
-            <Link to="/dashboard">Cadastrar Servidores</Link>
-            <Link to="/dashboard">Cadastrar Planos</Link>
-            <Link to="/dashboard">Mensagem WhatsApp</Link>
+            <Link to="/dashboard">
+              <FiUserPlus />
+              Cadastrar Clientes
+            </Link>
+            <Link to="/dashboard">
+              <FiServer />
+              Cadastrar Servidores
+            </Link>
+            <Link to="/dashboard">
+              <FiPlusSquare />
+              Cadastrar Planos
+            </Link>
+            <Link to="/dashboard">
+              <FiMessageCircle />
+              Mensagem WhatsApp
+            </Link>
           </div>
         </Actions>
 
         <Services className="content" onClick={handleServices}>
           <div className="title">
             <button type="button">
-              {!isServices ? <FiPlus size={16} /> : <FiMinus size={16} />}
+              {!isServices ? <FiUser /> : <FiMinus />}
               <h2>Usuário</h2>
             </button>
           </div>
           <div className={isClassNameServices}>
-            <Link to="/dashboard">Meu Perfil</Link>
-            <Link to="/">Sair</Link>
+            <Link to="/dashboard">
+              <FiSettings />
+              Meu Perfil
+            </Link>
+            <Link to="/">
+              <FiLogOut />
+              Sair
+            </Link>
           </div>
         </Services>
       </Content>
