@@ -119,80 +119,23 @@ export const Title = styled.h1`
   text-shadow: 0 2px 2px ${shade(0.2, '#ff9000')};
 `;
 
-export const ActiveClient = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const InativeCustomers = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const ServersList = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const PlansList = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const DivTable = styled.div`
+export const DivCards = styled.div`
+  padding: 10px;
   flex: 1;
-  box-shadow: none !important;
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-
-    th,
-    tr,
-    td {
-      box-shadow: 0 0 1px ${shade(0.2, '#ff9000')};
-    }
-
-    th {
-      height: 40px;
-      color: ${shade(0.2, '#ff9000')};
-    }
-
-    tr {
-      td {
-        height: 30px;
-
-        button {
-          border: 0;
-          background: transparent;
-          color: #fafafa;
-        }
-
-        svg {
-          width: 1.4rem;
-          height: 1.8rem;
-        }
-      }
-
-      &:hover {
-        color: ${shade(0.2, '#ff9000')};
-
-        button {
-          color: ${shade(0.2, '#ff9000')};
-        }
-      }
-    }
-  }
 `;
 
-export const DivButton = styled.div`
-  button {
-    border: 0;
-    background: transparent;
-    color: #fafafa;
+export const DivGraphics = styled.div`
+  display: flex;
+  align-items: center;
 
-    &:hover {
-      color: ${shade(0.2, '#ff9000')};
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+
+    & + div {
+      margin-left: 15px;
     }
   }
 `;

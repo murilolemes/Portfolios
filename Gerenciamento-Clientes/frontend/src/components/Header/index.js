@@ -133,7 +133,7 @@ const Header = () => {
           <div className="title">
             <button type="button" onClick={handleActions}>
               {!isActions ? <FiFilePlus /> : <FiMinus />}
-              <h2>Cadastar</h2>
+              <h2>Cadastrar</h2>
             </button>
           </div>
           <div className={isClassNameActions}>
