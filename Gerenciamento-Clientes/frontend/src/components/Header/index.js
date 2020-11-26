@@ -40,6 +40,9 @@ const Header = () => {
   const [isMenu, setIsMenu] = useState(false);
   const [isDisplayMenu, setIsDisplayMenu] = useState('displayOff');
 
+  const [isIconMenu, setIsIconMenu] = useState(false);
+  const [isIconDisplay, setIsIconDisplay] = useState('displayAbsolute');
+
   const handleControlPanel = useCallback(() => {
     if (isControlPanel) {
       setIsClassNameControlPanel('list');
@@ -89,18 +92,26 @@ const Header = () => {
   }, [isServices]);
 
   const handleMenu = useCallback(() => {
-    if (isMenu) {
+    if (isMenu && isIconMenu) {
       setIsMenu(false);
       setIsDisplayMenu('displayOff');
+
+      setIsIconMenu(false);
+      setIsIconDisplay('displayAbsolute');
     } else {
       setIsMenu(true);
       setIsDisplayMenu('displayOn');
+
+      setIsIconMenu(true);
+      setIsIconDisplay('displayFixed');
     }
-  }, [isMenu]);
+  }, [isMenu, isIconMenu]);
 
   return (
     <Container>
-      <Icon onClick={handleMenu}>{!isMenu ? <FiMenu /> : <FiX />}</Icon>
+      <Icon onClick={handleMenu} id={isIconDisplay}>
+        {!isMenu ? <FiMenu /> : <FiX />}
+      </Icon>
       <Content id={isDisplayMenu}>
         <ControlPanel className="content">
           <div className="title">

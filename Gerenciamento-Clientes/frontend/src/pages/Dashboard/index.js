@@ -8,35 +8,21 @@ import {
   GraphicsPlans,
 } from '../../components/Graphics/index';
 
-import {
-  Container,
-  Content,
-  Body,
-  Title,
-  DivCards,
-  DivGraphics,
-} from './styles';
+import { Container, Content, Title, Body, DivGraphics } from './styles';
 
 const Dashboard = () => (
   <Container>
     <Header />
     <Content>
+      <Title>Sistema de Gerenciamento de Clientes</Title>
       <Body>
-        <div id="title">
-          <Title>Sistema de Gerenciamento de Clientes</Title>
-        </div>
-
-        <DivCards>
-          <Cards />
-        </DivCards>
+        <Cards />
         <DivGraphics>
           <div>
             <GraphicsServers />
-          </div>
-          <div>
             <GraphicsClient />
           </div>
-          <div>
+          <div id="divPlans">
             <GraphicsPlans />
           </div>
         </DivGraphics>
