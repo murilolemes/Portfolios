@@ -19,6 +19,8 @@ import {
 import {
   Container,
   Icon,
+  Title,
+  Lists,
   ControlPanel,
   Actions,
   Content,
@@ -41,7 +43,7 @@ const Header = () => {
   const [isDisplayMenu, setIsDisplayMenu] = useState('displayOff');
 
   const [isIconMenu, setIsIconMenu] = useState(false);
-  const [isIconDisplay, setIsIconDisplay] = useState('displayAbsolute');
+  const [isIconDisplay, setIsIconDisplay] = useState('displayZIndexNone');
 
   const handleControlPanel = useCallback(() => {
     if (isControlPanel) {
@@ -97,13 +99,13 @@ const Header = () => {
       setIsDisplayMenu('displayOff');
 
       setIsIconMenu(false);
-      setIsIconDisplay('displayAbsolute');
+      setIsIconDisplay('displayZIndexNone');
     } else {
       setIsMenu(true);
       setIsDisplayMenu('displayOn');
 
       setIsIconMenu(true);
-      setIsIconDisplay('displayFixed');
+      setIsIconDisplay('displayZIndex1');
     }
   }, [isMenu, isIconMenu]);
 
@@ -112,16 +114,26 @@ const Header = () => {
       <Icon onClick={handleMenu} id={isIconDisplay}>
         {!isMenu ? <FiMenu /> : <FiX />}
       </Icon>
+      <Title>Sistema de Gerenciamento de Clientes</Title>
       <Content id={isDisplayMenu}>
         <ControlPanel className="content">
           <div className="title">
-            <button type="button" onClick={handleControlPanel}>
-              {!isControlPanel ? <FiGrid /> : <FiMinus />}
+            <Link to="/dashboard">
+              <FiGrid />
               <h2>Painel de controle</h2>
+            </Link>
+          </div>
+        </ControlPanel>
+
+        <Lists className="content">
+          <div className="title">
+            <button type="button" onClick={handleControlPanel}>
+              {!isControlPanel ? <FiList /> : <FiMinus />}
+              <h2>Listas</h2>
             </button>
           </div>
           <div className={isClassNameControlPanel}>
-            <Link to="/dashboard">
+            <Link to="/activeClientList">
               <FiList />
               Listar Clientes Ativos
             </Link>
@@ -138,7 +150,7 @@ const Header = () => {
               Listar Planos
             </Link>
           </div>
-        </ControlPanel>
+        </Lists>
 
         <Actions className="content">
           <div className="title">

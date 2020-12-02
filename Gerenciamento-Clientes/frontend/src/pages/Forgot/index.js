@@ -1,38 +1,38 @@
 import React, { useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn, FiUser, FiLock } from 'react-icons/fi';
+import { FiArrowLeft, FiUser, FiMail } from 'react-icons/fi';
 
 import { Container, Content, Form, DivInput } from './styles';
 
-const SignIn = () => {
+const Forgot = () => {
   const history = useHistory();
 
   const handleSubmit = useCallback(() => {
-    history.push('/dashboard');
+    history.push('/');
   }, [history]);
   return (
     <Container>
       <Content>
-        <h1>SGC</h1>
+        <h1>Esqueci minha senha!</h1>
         <Form onSubmit={handleSubmit}>
           <DivInput>
             <div>
               <FiUser size={15} />
-              <input className="login" placeholder="Login" />
+              <input placeholder="Login" />
             </div>
             <div>
-              <FiLock size={15} />
-              <input className="password" type="password" placeholder="Senha" />
+              <FiMail size={15} />
+              <input placeholder="E-mail" />
             </div>
           </DivInput>
-          <button type="submit">Entrar</button>
+          <button type="submit">Enviar</button>
         </Form>
-        <Link to="/forgot">
-          <FiLogIn size={13} />
-          Esqueci minha senha
+        <Link to="/">
+          <FiArrowLeft size={15} />
+          Voltar ao Login
         </Link>
       </Content>
     </Container>
   );
 };
-export default SignIn;
+export default Forgot;

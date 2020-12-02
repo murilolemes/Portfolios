@@ -8,13 +8,12 @@ import {
   GraphicsPlans,
 } from '../../components/Graphics/index';
 
-import { Container, Content, Title, Body, DivGraphics } from './styles';
+import { Container, Content, Body, DivGraphics } from './styles';
 
 const Dashboard = () => (
   <Container>
     <Header />
     <Content>
-      <Title>Sistema de Gerenciamento de Clientes</Title>
       <Body>
         <Cards />
         <DivGraphics>

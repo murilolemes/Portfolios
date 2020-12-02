@@ -37,43 +37,43 @@ const listServers = [
 
 const listPlans = [
   {
-    plan: 'Plano 1 tela HD',
+    plan: 'Plano A',
     qtd: '1205',
   },
   {
-    plan: 'Plano 1 tela Full HD',
+    plan: 'Plano B',
     qtd: '977',
   },
   {
-    plan: 'Plano 2 tela HD',
+    plan: 'Plano C',
     qtd: '1054',
   },
   {
-    plan: 'Plano 2 tela Full HD',
+    plan: 'Plano D',
     qtd: '899',
   },
   {
-    plan: 'Plano 3 tela HD',
+    plan: 'Plano E',
     qtd: '1368',
   },
   {
-    plan: 'Plano 3 tela Full HD',
+    plan: 'Plano F',
     qtd: '1295',
   },
   {
-    plan: 'Plano 4 tela HD',
+    plan: 'Plano G',
     qtd: '1580',
   },
   {
-    plan: 'Plano 4 tela Full HD',
+    plan: 'Plano H',
     qtd: '1445',
   },
   {
-    plan: 'Plano Adulto HD',
+    plan: 'Plano I',
     qtd: '1150',
   },
   {
-    plan: 'Plano Adulto Full HD',
+    plan: 'Plano J',
     qtd: '924',
   },
 ];
@@ -133,7 +133,7 @@ export const GraphicsPlans = () => {
     labels: listPlans.map((plans) => plans.plan),
     datasets: [
       {
-        label: 'Clientes ativos por servidor',
+        label: 'Clientes ativos por plano',
         data: listPlans.map((plans) => plans.qtd),
         backgroundColor: shade(0.2, '#ff9000'),
         hoverBackgroundColor: '#ff9000',
