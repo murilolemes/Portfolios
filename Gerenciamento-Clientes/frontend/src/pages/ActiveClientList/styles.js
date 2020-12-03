@@ -7,10 +7,67 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  margin-top: 10rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
+
+  table {
+    margin-top: 1.5rem;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid ${shade(0.2, '#ff9000')};
+    border-collapse: collapse;
+  }
+
+  table {
+    width: 90%;
+
+    th {
+      height: 5rem;
+      color: ${shade(0, '#ff9000')};
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    td {
+      text-align: center;
+      height: 3rem;
+
+      button {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          color: #fafafa;
+          transition: color 0.2s;
+        }
+
+        :hover {
+          svg {
+            color: #ff9000;
+          }
+        }
+      }
+    }
+
+    #tableBody {
+      transition: background 0.2s;
+
+      :hover {
+        background: ${shade(0.6, '#ff9000')};
+      }
+    }
+  }
 
   @media (max-width: 320px) {
     padding-top: 2.7rem;
@@ -45,46 +102,6 @@ export const Content = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  text-align: center;
-  text-shadow: 0 2px 2px ${shade(0.2, '#ff9000')};
-
-  @media (max-width: 320px) {
-    width: 75%;
-    margin-left: 2rem;
-    font-size: 1.8rem;
-  }
-
-  @media (min-width: 321px) {
-    width: 80%;
-    margin-left: 2.1rem;
-    font-size: 2.1rem;
-  }
-
-  @media (min-width: 376px) {
-    width: 75%;
-    font-size: 2.2rem;
-  }
-
-  @media (min-width: 401px) {
-    font-size: 2.4rem;
-  }
-
-  @media (min-width: 471px) {
-    font-size: 2.6rem;
-  }
-
-  @media (min-width: 571px) {
-    font-size: 2.8rem;
-  }
-
-  @media (min-width: 671px) {
-    font-size: 3rem;
-    margin-left: 0;
-  }
-
-  @media (min-width: 769px) {
-    font-size: 3.2rem;
-    margin-bottom: 1rem;
-  }
+export const DivFilter = styled.div`
+  margin-top: 1.5rem;
 `;
