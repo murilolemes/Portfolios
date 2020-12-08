@@ -103,5 +103,76 @@ export const Content = styled.div`
 `;
 
 export const DivFilter = styled.div`
+  height: 4.7rem;
   margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 2rem;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+  }
+`;
+
+export const SelectDiv = styled.div`
+  border: 1px solid #ff9000;
+  border-radius: 5px;
+  padding: 1rem;
+
+  select {
+    font-size: 1.6rem;
+    height: 2.4rem;
+    border: 0;
+    background: transparent;
+    color: #ff9000;
+  }
+`;
+
+export const InputDiv = styled.div`
+  display: flex;
+  align-items: center;
+
+  div {
+    margin-left: 1.5rem;
+    border: 1px solid #ff9000;
+    border-radius: 5px;
+    padding: 1rem;
+
+    input {
+      border: 0;
+      background: transparent;
+      color: #ff9000;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-left: 1.5rem;
+  }
+
+  button {
+    width: 100px;
+    height: 4.7rem;
+    margin-left: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    background: #ff9000;
+    color: #312e38;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    &:hover {
+      background: ${shade(0.2, '#ff9000')};
+    }
+  }
 `;

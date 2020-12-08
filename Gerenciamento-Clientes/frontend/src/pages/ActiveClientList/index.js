@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { FiEye } from 'react-icons/fi';
 
 import Header from '../../components/Header';
 
-import { Container, Content, DivFilter } from './styles';
+import { Container, Content, DivFilter, InputDiv, SelectDiv } from './styles';
 
 const users = [
   {
@@ -168,71 +168,158 @@ const filterType = [
   },
   {
     id: '2',
-    name: 'Data de Contrato',
-  },
-  {
-    id: '3',
     name: 'Servidor',
   },
   {
+    id: '3',
+    name: 'Situação',
+  },
+  {
     id: '4',
-    name: 'Data de Vencimento',
+    name: 'Data de Contrato',
   },
   {
     id: '5',
-    name: 'Situação',
+    name: 'Data de Vencimento',
   },
 ];
 
-const ActiveClientList = () => (
-  <Container>
-    <Header />
-    <Content>
-      <h2>Lista de Clientes Ativos</h2>
-      <DivFilter>
-        <h4>Filtrar por</h4>
-        <form action="">
-          <select name="subject" id="subject" required>
-            <option value="">Selecione uma opção</option>
-            {filterType.map((fiType) => (
-              <option value={fiType.id}>{fiType.name}</option>
-            ))}
-          </select>
-          {/* {console.log(document.getElementById('subject'))} */}
-        </form>
-      </DivFilter>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Data Contrato</th>
-            <th>Servidor</th>
-            <th>Data Vencimento</th>
-            <th>Situação</th>
-            <th>Status</th>
-            <th>Ver</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id} id="tableBody">
-              <td>{user.name}</td>
-              <td>{user.contract}</td>
-              <td>{user.server}</td>
-              <td>{user.expirationDate}</td>
-              <td>{user.situation}</td>
-              <td>{user.status}</td>
-              <td>
-                <button type="submit">
-                  <FiEye size={20} />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </Content>
-  </Container>
-);
+const ActiveClientList = () => {
+  const [isSelected, setIsSelected] = useState('');
 
+  const handleSelect = useCallback(() => {
+    const selected = document.getElementById('searchFor').value;
+
+    setIsSelected(selected);
+  }, []);
+
+  const handleFilter = useCallback((id) => {
+    const selectDiv = document.getElementById('SelectDiv');
+
+    switch (id) {
+      case '1':
+        selectDiv.style.display = 'flex';
+        selectDiv.innerHTML = `
+          <div>
+            <input type="text" placeholder="Digite o nome"/>
+          </div>
+          <button type="button">Enviar</button>
+        `;
+        break;
+
+      case '2':
+        selectDiv.style.display = 'flex';
+        selectDiv.innerHTML = `
+        <div>
+            <input type="text" placeholder="Digite o servidor"/>
+          </div>
+          <button type="button">Enviar</button>
+        `;
+        break;
+
+      case '3':
+        selectDiv.style.display = 'flex';
+        selectDiv.innerHTML = `
+          <div>
+            <input type="text" placeholder="Digite a situação"/>
+          </div>
+          <button type="button">Enviar</button>
+
+        `;
+        break;
+
+      case '4':
+        selectDiv.style.display = 'flex';
+        selectDiv.innerHTML = `
+          <div>
+            <input type="date" />
+          </div>
+          <p>até</p>
+          <div>
+            <input type="date" />
+          </div>
+          <button type="button">Enviar</button>
+        `;
+        break;
+
+      case '5':
+        selectDiv.style.display = 'flex';
+        selectDiv.innerHTML = `
+          <div>
+            <input type="date" />
+          </div>
+          <p>até</p>
+          <div>
+            <input type="date" />
+          </div>
+          <button type="button">Enviar</button>
+        `;
+        break;
+
+      default:
+        if (selectDiv === null) {
+          break;
+        } else {
+          selectDiv.style.display = 'none';
+        }
+
+        break;
+    }
+  }, []);
+
+  return (
+    <Container>
+      <Header />
+      <Content>
+        <h2>Lista de Clientes Ativos</h2>
+        <DivFilter>
+          <p>Filtrar por</p>
+          <form action="">
+            <SelectDiv>
+              <select id="searchFor" onChange={handleSelect} required>
+                <option value="">Selecione uma opção</option>
+                {filterType.map((fiType) => (
+                  <option key={fiType.id} value={fiType.id}>
+                    {fiType.name}
+                  </option>
+                ))}
+              </select>
+            </SelectDiv>
+            <InputDiv id="SelectDiv">{handleFilter(isSelected)}</InputDiv>
+          </form>
+        </DivFilter>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Data Contrato</th>
+              <th>Servidor</th>
+              <th>Data Vencimento</th>
+              <th>Situação</th>
+              <th>Status</th>
+              <th>Ver</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id} id="tableBody">
+                <td>{user.name}</td>
+                <td>{user.contract}</td>
+                <td>{user.server}</td>
+                <td>{user.expirationDate}</td>
+                <td>{user.situation}</td>
+                <td>{user.status}</td>
+                <td>
+                  <button type="button">
+                    <FiEye size={20} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Content>
+    </Container>
+  );
+};
 export default ActiveClientList;
