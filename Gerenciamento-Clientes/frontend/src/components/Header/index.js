@@ -133,13 +133,9 @@ const Header = () => {
             </button>
           </div>
           <div className={isClassNameControlPanel}>
-            <Link to="/activeClientList">
+            <Link to="/clientList">
               <FiList />
-              Listar Clientes Ativos
-            </Link>
-            <Link to="/dashboard">
-              <FiList />
-              Listar Clientes Inativos
+              Listar Clientes
             </Link>
             <Link to="/dashboard">
               <FiList />
