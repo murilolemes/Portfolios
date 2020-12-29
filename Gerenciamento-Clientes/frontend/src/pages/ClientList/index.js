@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { FiEye, FiX } from 'react-icons/fi';
+import { FiEye, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { BiFilter } from 'react-icons/bi';
 
 import Header from '../../components/Header';
 import { users, servers } from '../../services/server';
@@ -13,6 +14,7 @@ import {
   InputDiv,
   Button,
   Content,
+  DivFilter,
   Table,
   DivPages,
 } from './styles';
@@ -22,7 +24,8 @@ const ClientList = () => {
   const filterStatus = useState([]);
   const filterServer = useState([]);
   const filterSituation = useState([]);
-  // const filterDateContract = useState([]);
+  const [page, setPage] = useState(0);
+  const rowsPerPage = 14;
 
   const handleButtonClose = useCallback(() => {
     const displayContainer = document.getElementById('clientFilter');
@@ -72,6 +75,25 @@ const ClientList = () => {
     const displayContainer = document.getElementById('clientFilter');
     displayContainer.style.display = 'flex';
   }, []);
+
+  const handleNextPage = useCallback(() => {
+    setPage(page + 1);
+  }, [page]);
+
+  const handlePreviousPage = useCallback(() => {
+    setPage(page - 1);
+  }, [page]);
+
+  const firstLinePage = page === 0 ? 1 : page * rowsPerPage + 1;
+
+  const calcLastLinePage = page === 0 ? 14 : page * rowsPerPage + rowsPerPage;
+
+  const restPage = isFilterUser.length % rowsPerPage;
+
+  const lastPage = isFilterUser.length / rowsPerPage;
+
+  const lastLinePage =
+    lastPage < page + 1 ? firstLinePage + restPage - 1 : calcLastLinePage;
 
   return (
     <Container>
@@ -178,11 +200,13 @@ const ClientList = () => {
       </ClientFilter>
       <Header />
       <Content>
-        <h2>Lista de Clientes</h2>
+        <DivFilter>
+          <h2>Lista de Clientes</h2>
 
-        <button type="button" onClick={handleFilter}>
-          Filtro
-        </button>
+          <button type="button" onClick={handleFilter}>
+            <BiFilter size={30} />
+          </button>
+        </DivFilter>
 
         <Table>
           <thead>
@@ -198,30 +222,45 @@ const ClientList = () => {
             </tr>
           </thead>
           <tbody>
-            {isFilterUser.map((user) => (
-              <tr key={user.id} id="tableBody">
-                <td>{user.name}</td>
-                <td>{user.contract}</td>
-                <td>{user.server}</td>
-                <td>{user.plan}</td>
-                <td>{user.expirationDate}</td>
-                <td>{user.situation}</td>
-                <td>{user.status}</td>
-                <td>
-                  <button type="button">
-                    <FiEye size={20} />
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {isFilterUser
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((user) => (
+                <tr key={user.id} id="tableBody">
+                  <td>{user.name}</td>
+                  <td>{user.contract}</td>
+                  <td>{user.server}</td>
+                  <td>{user.plan}</td>
+                  <td>{user.expirationDate}</td>
+                  <td>{user.situation}</td>
+                  <td>{user.status}</td>
+                  <td>
+                    <button type="button">
+                      <FiEye size={20} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </Table>
         <DivPages>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-          <button type="button">4</button>
-          <button type="button">5</button>
+          <p>{`${firstLinePage} - ${lastLinePage} de ${isFilterUser.length}`}</p>
+          <button
+            type="button"
+            disabled={page === 0}
+            onClick={handlePreviousPage}
+          >
+            <FiChevronLeft />
+          </button>
+          <p>{page + 1}</p>
+          <button
+            type="button"
+            disabled={
+              lastPage < page + 1 || lastLinePage === isFilterUser.length
+            }
+            onClick={handleNextPage}
+          >
+            <FiChevronRight />
+          </button>
         </DivPages>
       </Content>
     </Container>

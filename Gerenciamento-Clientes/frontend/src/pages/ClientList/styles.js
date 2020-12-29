@@ -6,41 +6,6 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const DivFilter = styled.div`
-  height: 4.7rem;
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  p {
-    font-size: 2rem;
-  }
-
-  #divForm {
-    display: flex;
-    align-items: center;
-    margin-left: 1.5rem;
-
-    button {
-      width: 100px;
-      height: 4.7rem;
-      margin-left: 1.5rem;
-      border-radius: 5px;
-      border: none;
-      background: #ff9000;
-      color: #312e38;
-      font-size: 1.6rem;
-      font-weight: 500;
-      display: none;
-
-      &:hover {
-        background: ${shade(0.2, '#ff9000')};
-      }
-    }
-  }
-`;
-
 export const ClientFilter = styled.div`
   position: absolute;
   right: 0;
@@ -101,30 +66,6 @@ export const Body = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
-
-export const SelectDiv = styled.div`
-  width: 100%;
-
-  p {
-    font-size: 1.8rem;
-  }
-
-  div {
-    border: 1px solid #ff9000;
-    margin-top: 1rem;
-    border-radius: 5px;
-    padding: 1rem;
-  }
-
-  select {
-    width: 100%;
-    height: 2.4rem;
-    font-size: 1.6rem;
-    border: 0;
-    background: transparent;
-    color: #ff9000;
-  }
 `;
 
 export const InputDiv = styled.div`
@@ -192,19 +133,17 @@ export const Button = styled.button`
 
 export const Content = styled.div`
   width: 100%;
-  height: 650px;
+  height: 620px;
   margin-top: 10rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: #fafafa;
 
-  border: 1px solid #fff;
-
   table,
   th,
   td {
-    border: 1px solid ${shade(0.2, '#ff9000')};
+    border: 1px solid ${shade(0.4, '#ff9000')};
     border-collapse: collapse;
   }
 
@@ -241,9 +180,34 @@ export const Content = styled.div`
   }
 `;
 
+export const DivFilter = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+    flex: 1;
+  }
+
+  button {
+    color: #fafafa;
+    background: transparent;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+
+    :hover {
+      color: ${shade(0.2, '#ff9000')};
+    }
+  }
+`;
+
 export const Table = styled.table`
   flex: 1;
-  width: 90%;
+  width: 100%;
   margin-top: 1.5rem;
 
   th {
@@ -282,26 +246,49 @@ export const Table = styled.table`
     transition: background 0.2s;
 
     :hover {
-      background: ${shade(0.6, '#ff9000')};
+      background: ${shade(0.4, '#ff9000')};
     }
   }
 `;
 
 export const DivPages = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0 1rem;
+  }
+
   button {
     height: 40px;
-    width: 35px;
-    background-color: ${shade(0.2, '#ff9000')};
-    border: 1px solid ${shade(0.2, '#ff9000')};
+    width: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0px;
     color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.2s;
 
     & + button {
-      margin-left: 0.5rem;
+      margin-left: 1rem;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    :disabled {
+      opacity: 0.2;
     }
 
     :hover {
-      background-color: transparent;
+      background: ${shade(0.2, '#ff9000')};
     }
   }
 `;
