@@ -4,7 +4,9 @@ import { Container } from './styles';
 
 const Inputs = () => (
   <Container>
-    <input type="text" placeholder="teste" />
+    <div>
+      <input placeholder="nome" />
+    </div>
   </Container>
 );
 
