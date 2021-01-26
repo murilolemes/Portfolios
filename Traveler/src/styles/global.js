@@ -24,7 +24,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Heebo', 'Roboto', sans-serif;
     font-size: 1.6rem;
   }
 
