@@ -7,7 +7,6 @@ import {
   Body,
   DivDescriptions,
   DivCards,
-  Footer,
 } from './styles';
 
 function App() {
@@ -66,8 +65,6 @@ function App() {
             </div>
           </DivCards>
         </Body>
-
-        <Footer />
       </Content>
     </Container>
   );
