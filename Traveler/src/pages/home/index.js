@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   Container,
@@ -26,7 +27,7 @@ function App() {
                 Descubra locais incríveis para se visitar em cidades
                 maravilhosas de Santa Catarina.
               </p>
-              <button type="button">Descobrir todos os lugares</button>
+              <Link to="/cityList">Descobrir todos os lugares</Link>
             </div>
           </DivDescriptions>
 

@@ -154,7 +154,7 @@ export const DivDescriptions = styled.div`
       margin-top: 40px;
     }
 
-    button {
+    a {
       width: 100%;
       margin-top: 40px;
       background: #f25d27;
@@ -163,6 +163,10 @@ export const DivDescriptions = styled.div`
       font-family: 'Heebo';
       color: #fff;
       font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -179,7 +183,7 @@ export const DivDescriptions = styled.div`
         font-size: 17px;
       }
 
-      button {
+      a {
         height: 65px;
         font-size: 16px;
       }
@@ -199,7 +203,7 @@ export const DivDescriptions = styled.div`
         font-size: 17px;
       }
 
-      button {
+      a {
         height: 65px;
         font-size: 16px;
       }
@@ -219,7 +223,7 @@ export const DivDescriptions = styled.div`
         font-size: 20px;
       }
 
-      button {
+      a {
         height: 65px;
         font-size: 16px;
       }
@@ -240,7 +244,7 @@ export const DivDescriptions = styled.div`
         font-size: 20px;
       }
 
-      button {
+      a {
         height: 72px;
         font-size: 18px;
       }
