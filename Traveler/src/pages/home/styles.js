@@ -48,13 +48,11 @@ export const Content = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   button {
-    width: 174px;
     height: 100%;
     background: #dde9f0;
     border: 0;
@@ -63,54 +61,51 @@ export const Header = styled.div`
     font-weight: 500;
   }
 
-  @media (max-width: 320px) {
-    height: 40px;
-
+  @media (max-width: 375px) {
     img {
-      width: 110px;
+      order: 1;
+      width: 120px;
     }
 
     button {
-      width: 110px;
+      order: 2;
+      height: 40px;
+      width: 120px;
       font-size: 12px;
     }
   }
 
-  @media (min-width: 321px) {
-    height: 40px;
-
+  @media (min-width: 376px) {
     img {
-      width: 110px;
+      order: 1;
+      width: 140px;
     }
 
     button {
-      width: 110px;
-      font-size: 12px;
+      order: 2;
+      width: 140px;
+      height: 48px;
+      font-size: 13px;
     }
   }
 
-  @media (min-width: 425px) {
-    height: 44px;
-
-    img {
-      width: 136px;
-    }
-
+  @media (min-width: 500px) {
     button {
-      width: 154px;
-      font-size: 14px;
+      width: 174px;
+      font-size: 16px;
     }
   }
 
-  @media (min-width: 769px) {
-    height: 48px;
-
+  @media (min-width: 900px) {
     img {
+      order: 1;
       width: 156px;
     }
 
     button {
+      order: 3;
       width: 174px;
+      height: 48px;
       font-size: 16px;
     }
   }

@@ -7,7 +7,7 @@ import CityList from '../pages/CityList';
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/cityList" exact component={CityList} />
+    <Route path="/listaCidade" exact component={CityList} />
   </Switch>
 );
 

@@ -27,7 +27,7 @@ function App() {
                 Descubra locais incríveis para se visitar em cidades
                 maravilhosas de Santa Catarina.
               </p>
-              <Link to="/cityList">Descobrir todos os lugares</Link>
+              <Link to="/listaCidade">Descobrir todos os lugares</Link>
             </div>
           </DivDescriptions>
 
