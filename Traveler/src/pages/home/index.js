@@ -1,24 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import {
-  Container,
-  Header,
-  Content,
-  Body,
-  DivDescriptions,
-  DivCards,
-} from './styles';
+import { Header } from '../../components/Header';
+import { CardsHome } from '../../components/Cards';
+
+import { Container, Content, Body, DivDescriptions } from './styles';
 
 function App() {
   return (
     <Container>
+      <Header />
       <Content>
-        <Header>
-          <img src="/assets/Logo.svg" alt="Logo" />
-          <button type="button">Acesso Restrito</button>
-        </Header>
-
         <Body>
           <DivDescriptions>
             <div>
@@ -30,41 +22,7 @@ function App() {
               <Link to="/listaCidade">Descobrir todos os lugares</Link>
             </div>
           </DivDescriptions>
-
-          <DivCards>
-            <div className="divCards" id="leftDivCards">
-              <div className="card">
-                <img src="/assets/image3.png" alt="Florianópolis" />
-                <div className="descriptionCard">
-                  <h3>Florianópolis</h3>
-                  <p>98 locais</p>
-                </div>
-              </div>
-              <div className="card">
-                <img src="/assets/image2.png" alt="Florianópolis" />
-                <div className="descriptionCard">
-                  <h3>Florianópolis</h3>
-                  <p>98 locais</p>
-                </div>
-              </div>
-            </div>
-            <div className="divCards" id="rightDivCards">
-              <div className="card">
-                <img src="/assets/image1.png" alt="Florianópolis" />
-                <div className="descriptionCard">
-                  <h3>Florianópolis</h3>
-                  <p>98 locais</p>
-                </div>
-              </div>
-              <div className="card">
-                <img src="/assets/image4.png" alt="Florianópolis" />
-                <div className="descriptionCard">
-                  <h3>Florianópolis</h3>
-                  <p>98 locais</p>
-                </div>
-              </div>
-            </div>
-          </DivCards>
+          <CardsHome />
         </Body>
       </Content>
     </Container>

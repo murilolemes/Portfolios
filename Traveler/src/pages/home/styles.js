@@ -2,131 +2,40 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
-
-  @media (max-width: 320px) {
-    padding: 20px;
-  }
-
-  @media (min-width: 321px) {
-    padding: 20px;
-  }
-
-  @media (min-width: 321px) {
-    padding: 20px 40px;
-  }
-
-  @media (min-width: 501px) {
-    padding: 20px 50px;
-  }
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 320px) {
-    width: 100%;
-  }
-
-  @media (min-width: 321px) {
-    width: 100%;
-  }
-
-  @media (min-width: 769px) {
-    width: 600px;
-  }
-
-  @media (min-width: 1025px) {
-    width: 1000px;
-  }
-
-  @media (min-width: 1201px) {
-    width: 1100px;
-  }
-`;
-
-export const Header = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  button {
-    height: 100%;
-    background: #dde9f0;
-    border: 0;
-    border-radius: 10px;
-    color: #115d8c;
-    font-weight: 500;
-  }
-
-  @media (max-width: 375px) {
-    img {
-      order: 1;
-      width: 120px;
-    }
-
-    button {
-      order: 2;
-      height: 40px;
-      width: 120px;
-      font-size: 12px;
-    }
-  }
-
-  @media (min-width: 376px) {
-    img {
-      order: 1;
-      width: 140px;
-    }
-
-    button {
-      order: 2;
-      width: 140px;
-      height: 48px;
-      font-size: 13px;
-    }
-  }
-
-  @media (min-width: 500px) {
-    button {
-      width: 174px;
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 900px) {
-    img {
-      order: 1;
-      width: 156px;
-    }
-
-    button {
-      order: 3;
-      width: 174px;
-      height: 48px;
-      font-size: 16px;
-    }
-  }
 `;
 
 export const Body = styled.div`
-  width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
 
   @media (max-width: 320px) {
+    width: 256px;
     flex-direction: column;
   }
 
   @media (min-width: 321px) {
+    width: 256px;
     flex-direction: column;
   }
 
-  @media (min-width: 1025px) {
+  @media (min-width: 620px) {
+    width: 578px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 1000px;
     flex-direction: row;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1152px;
   }
 `;
 
@@ -170,7 +79,7 @@ export const DivDescriptions = styled.div`
       width: 100%;
 
       h1 {
-        font-size: 65px;
+        font-size: 64px;
         margin-top: 20px;
       }
 
@@ -190,7 +99,7 @@ export const DivDescriptions = styled.div`
       width: 100%;
 
       h1 {
-        font-size: 70px;
+        font-size: 64px;
         margin-top: 20px;
       }
 
@@ -210,7 +119,7 @@ export const DivDescriptions = styled.div`
       width: 100%;
 
       h1 {
-        font-size: 80px;
+        font-size: 64px;
         margin-top: 20px;
       }
 
@@ -225,13 +134,11 @@ export const DivDescriptions = styled.div`
     }
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: 620px) {
+    padding: 0 16px;
     div {
-      width: 500px;
-      padding-right: 20px;
-
       h1 {
-        font-size: 80px;
+        font-size: 84px;
         margin-top: 20px;
       }
 
@@ -246,162 +153,20 @@ export const DivDescriptions = styled.div`
     }
   }
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     div {
-      width: 450px;
-      padding-right: 20px;
+      width: 392px;
+      margin-top: 50px;
     }
   }
 
-  @media (min-width: 1201px) {
+  @media (min-width: 1200px) {
+    width: 1118px;
+    display: flex;
+    justify-content: center;
+
     div {
-      width: 500px;
-      padding-right: 20px;
+      width: 330px;
     }
-  }
-`;
-
-export const DivCards = styled.div`
-  flex: 1;
-  display: flex;
-
-  .divCards {
-    .card {
-      display: flex;
-      flex-direction: column;
-
-      img {
-        height: 215px;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .descriptionCard {
-        height: 106px;
-        background: #fff;
-        border: 1px solid #dce2e6;
-        border-radius: 0 0 20px 20px;
-        padding: 26px;
-
-        h3 {
-          font-family: 'Barlow';
-          font-size: 22px;
-          line-height: 23px;
-          font-weight: 600;
-        }
-
-        p {
-          font-family: 'Roboto';
-          font-size: 15px;
-          line-height: 25px;
-          color: #617480;
-        }
-      }
-
-      & + div {
-        margin-top: 24px;
-      }
-    }
-  }
-
-  @media (max-width: 320px) {
-    flex-direction: column;
-
-    .divCards {
-      width: 100%;
-
-      .card {
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    #leftDivCards {
-      margin-top: 40px;
-    }
-
-    #rightDivCards {
-      margin-top: 24px;
-      margin-left: 0;
-    }
-  }
-
-  @media (min-width: 321px) {
-    flex-direction: column;
-    width: 100%;
-
-    .divCards {
-      width: 100%;
-
-      .card {
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    #leftDivCards {
-      margin-top: 40px;
-    }
-
-    #rightDivCards {
-      margin-top: 24px;
-      margin-left: 0;
-    }
-  }
-
-  @media (min-width: 425px) {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-
-    .divCards {
-      width: 344px;
-
-      .card {
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    #leftDivCards {
-      margin-top: 40px;
-    }
-
-    #rightDivCards {
-      margin-top: 24px;
-      margin-left: 0;
-    }
-  }
-
-  @media (min-width: 769px) {
-    flex-direction: row;
-    align-items: flex-start;
-    margin-top: 50px;
-
-    .divCards {
-      width: 100%;
-
-      .card {
-        img {
-          height: 165px;
-        }
-      }
-    }
-
-    #leftDivCards {
-      margin-top: 0;
-    }
-
-    #rightDivCards {
-      margin-left: 32px;
-      margin-top: 70px;
-    }
-  }
-
-  @media (min-width: 1025px) {
-    max-width: 600px;
-    margin-top: 0;
   }
 `;
